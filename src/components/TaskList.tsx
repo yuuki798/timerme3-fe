@@ -39,6 +39,7 @@ const TaskList: React.FC<TaskListProps> = ({
   return (
     <ul className={'list-none p-0'}>
       {tasks.map((task: Task) => {
+        // console.log(task);
         const progress = (task.duration / task.total_time) * 100;
         return (
           <li

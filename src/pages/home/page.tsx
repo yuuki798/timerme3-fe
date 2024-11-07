@@ -40,7 +40,7 @@ export default function Home() {
 
   useEffect(() => {
     tasks.forEach((task) => {
-      if (task.status === 'started' && !taskTimers[task.id]) {
+      if (task.status === 'running' && !taskTimers[task.id]) {
         const startTime = new Date(task.start_time).getTime();
         const currentTime = Date.now();
         const elapsedTime = Math.floor((currentTime - startTime) / 1000);
@@ -81,7 +81,7 @@ export default function Home() {
               };
             }
 
-            if (task.status === 'started') {
+            if (task.status === 'running') {
               return { ...task, duration: newDuration };
             }
           }
@@ -142,6 +142,7 @@ export default function Home() {
 
     try {
       const newTask = await createTask(newTaskName, totalTimeInSeconds);
+      console.log(newTask);
         if(newTask.duration==null){
             newTask.duration=0;
         }
@@ -167,6 +168,7 @@ export default function Home() {
   const handleDeleteTask = async (id: number) => {
     try {
       await deleteTask(id);
+      console.log(id);
       setTasks(tasks.filter((t) => t.id !== id));
     } catch (error) {
       console.error('Error deleting task:', error);
