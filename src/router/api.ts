@@ -2,11 +2,11 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:12349/api',
-  // baseURL: 'http://116.198.207.159:12349',
+  // baseURL: 'http://localhost:12349/api',
+  baseURL: 'http://116.198.207.159:12349/api',
   headers: {
     'Content-Type': 'application/json',
-    "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Inl1dWtpMyIsInJvbGUiOiJ1c2VyIiwiaXNzIjoiVGltZXJNZTMiLCJleHAiOjE3MzE1OTYyNjQsImlhdCI6MTczMDk5MTQ2NH0.dDioMNLgncOpe3FOJaa3LD4zTKNwVpmJNj8jSOV58cE"
+    "Authorization": "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6Inl1dWtpMyIsInJvbGUiOiJ1c2VyIiwiaXNzIjoiVGltZXJNZTMiLCJleHAiOjE3MzIzNjIxMDAsImlhdCI6MTczMTc1NzMwMH0.2ZTfC6chnPfEBnl5NEf7l6yvrgkkS4vyvl4ZyR4htCU"
   },
 });
 

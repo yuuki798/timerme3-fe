@@ -1,6 +1,7 @@
 // import {useState} from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import Home from '@/pages/home/page.tsx'
 import './App.css'
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
             {/*    <img src={reactLogo} className="logo react" alt="React logo" />*/}
             {/*  </a>*/}
             {/*</div>*/}
-            <h1>Welcome to TimerMe3!</h1>
-
+            {/* <h1 className="title">Welcome to TimerMe3!</h1> */}
+            <Home />
             {/*<div className="card">*/}
             {/*    <button onClick={() => setCount((count) => count + 1)}>*/}
             {/*        count is {count}*/}

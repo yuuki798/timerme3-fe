@@ -3,6 +3,7 @@
 
 // import React, { useState, useEffect } from 'react';
 import  { useState, useEffect } from 'react';
+import '../../style.css'
 import {
   getTasks,
   createTask,
@@ -246,41 +247,49 @@ export default function Home() {
 
   return (
       <>
-        <div className={'container mx-auto p-4 flex flex-col items-center w-full'}>
+            <h1 className="title">Welcome to TimerMe3!</h1>
+
+        <div className={'container'}>
+        {/* <div className={'container mx-auto p-4 flex flex-col items-center w-full'}> */}
           {/*<h1 className={'text-2xl font-bold mb-4'}>Welcome to TimerMe!</h1>*/}
           <br/>
           <div className={'mb-4 flex flex-col items-center w-full'}>
-            <div className={'flex mb-4 w-full'}>
-              <input
+            <div className={'add-content-wrapper w-full'}>
+            {/* <div className={'flex mb-4 w-full'}> */}
+              <div className='flex flex-row add-content empty'>
+                <input
                   type={'text'}
                   value={newTaskName}
                   onChange={(e) => setNewTaskName(e.target.value)}
                   placeholder={'New Task Name'}
-                  className={'border p-2 mr-2 w-full'}
-              />
-              <input
-                  type={'number'}
-                  value={newTotalTime}
-                  onChange={(e) => setNewTotalTime(parseInt(e.target.value))}
-                  placeholder={'Duration(seconds)'}
-                  className={'border p-2 mr-2 w-full'}
-              />
-              <select
-                  value={timeUnit}
-                  onChange={(e) => setTimeUnit(e.target.value)}
-                  className='border p-2 mr-2 w-full'
-              >
-                <option value='seconds'>Seconds</option>
-                <option value='minutes'>Minutes</option>
-                <option value='hours'>Hours</option>
-              </select>
-            </div>
-            <button
+                  className={'text-imput-border border-left-radius w-full'}
+                />
+                <input
+                    type={'number'}
+                    value={newTotalTime}
+                    onChange={(e) => setNewTotalTime(parseInt(e.target.value))}
+                    placeholder={'Duration(seconds)'}
+                    className={'text-imput-border w-full'}
+                />
+                <select
+                    value={timeUnit}
+                    onChange={(e) => setTimeUnit(e.target.value)}
+                    className='text-imput-border p-2 mr-2 w-full'
+                >
+                  <option value='seconds'>Seconds</option>
+                  <option value='minutes'>Minutes</option>
+                  <option value='hours'>Hours</option>
+                </select>
+              </div>
+              <button
                 onClick={handleCreateTask}
-                className={'bg-blue-500 text-white p-2 rounded mb-4 w-full'}
-            >
-              Add Task
-            </button>
+                className={'submit-btn'}
+                // className={'bg-blue-500 text-white p-2 rounded w-full'}
+              >
+                Add Task
+              </button>
+            </div>
+            
             <TaskList
                 tasks={tasks}
                 handleStartTask={handleStartTask}
